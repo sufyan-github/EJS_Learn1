@@ -1,0 +1,21 @@
+<%- include("layout/header") %>
+    <main>
+        <form action="/" method="POST">
+            <input type="text" name="pLanguage" placeholder="Programing Language">
+            <button type="submit">Save</button>
+        </form>
+
+        <ul>
+            <% var nonEmptyNames=plNames.filter(function(name) { return name.trim() !=='' ; }); if
+                (nonEmptyNames.length> 0) {
+                nonEmptyNames.forEach(function(name) { %>
+                <li>
+                    <%= name %>
+                </li>
+                <% }); } else { %>
+                    <p>No Data found</p>
+                    <% } %>
+        </ul>
+    </main>
+
+    <%- include("layout/footer") %>
